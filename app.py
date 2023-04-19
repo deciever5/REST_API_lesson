@@ -19,7 +19,7 @@ def get_todo(todo_id):
 
 
 @app.errorhandler(404)
-def not_found():
+def not_found(error):
     return make_response(jsonify({'error': 'Not found', 'status_code': 404}), 404)
 
 

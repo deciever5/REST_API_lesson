@@ -14,9 +14,7 @@ class Todos:
 
     def get(self, id):
         todo = [todo for todo in self.all() if todo['id'] == id]
-        if todo:
-            return todo[0]
-        return []
+        return todo[0] if todo else None
 
     def create(self, data):
         self.todos.append(data)
@@ -42,7 +40,6 @@ class Todos:
             self.save_all()
             return True
         return False
-
 
 
 todos = Todos()
